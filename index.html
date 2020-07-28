@@ -33,31 +33,45 @@
 
     <div style="font-size:22px">The <b>R</b>oleplaying <b>O</b>verhaul <b>P</b>roject (<b>ROP</b>) aims to greatly enhance the community's roleplaying experience by creating a brand new game from scratch.</div>
 
-<h2>How will we do this?</h2>
-<p>A brand new game will be created. Doing this will allow for</p>
-<ul>
-    <li>the creation of <b>completely custom maps</b> and <b>an end to landswapping</b>;</li>
-    <li>a comprehensive set of <b>tools to allow game designers to draw and customise maps</b>, specify starting units and resources (and more) and have their ideas automatically turned into new game rounds;</li>
-    <li>the addition of <b>new mechanics, units, and resources</b> that can all be customised to suit a particular game;</li>
-    <li>an <b>end to tedious rule enforcement</b>, rules will instead be specified for each round and handled automatically;</li>
-    <li>many more features to be decided by the community (see below).</li>
-</ul>
-<p>Most importantly, the game will be created with roleplaying and the community in mind. This means no payments or unfair advantages, constant support for the community, and greatly expanded roleplaying features.</p>
-<h2>That sounds cool! How can I help?</h2>
+    <h2 onclick="showHide(first)">How will we do this?</h2>
+    <div id="first">
+        <p>A brand new game will be created. Doing this will allow for</p>
+        <ul>
+            <li>the creation of <b>completely custom maps</b> and <b>an end to landswapping</b>;</li>
+            <li>a comprehensive set of <b>tools to allow game designers to draw and customise maps</b>, specify starting units and resources (and more) and have their ideas automatically turned into new game rounds;</li>
+            <li>the addition of <b>new mechanics, units, and resources</b> that can all be customised to suit a particular game;</li>
+            <li>an <b>end to tedious rule enforcement</b>, rules will instead be specified for each round and handled automatically;</li>
+            <li>many more features to be decided by the community (see below).</li>
+        </ul>
+        <p>Most importantly, the game will be created with roleplaying and the community in mind. This means no payments or unfair advantages, constant support for the community, and greatly expanded roleplaying features.</p>
+    </div>
+    <h2 onclick="showHide(second)">That sounds cool! How can I help?</h2>
+    <div id="second">
     <p>Whether you've designed your own rounds, have been around for years, or are just a newbie, we would love to hear from you about what you want to see.</p>
     <p>A short (anonymous) survey has been created for you to give your views on the current state of roleplaying in S1914 & CoW, how you feel about roleplaying in general, and what you want to see from a project like this.</p>
     <a href="google.com">Complete the survey</a>
-<h2>How can I learn more about this?</h2>
+    </div>
+    <h2>How can I learn more about this?</h2>
     <p>You can receive updates about the project by completing the survey and providing your Discord name or email address.</p>
     <p>You can also feel free to contact Rory on Discord. You can find him in the NRPU server.</p>
-<h2>Credits</h2>
+    <h2>Credits</h2>
     <p><b>Rory</b> - Project Lead and programmer</p>
     <p><b>petruz</b> - For providing useful information on existing Supremacy mechanics</p>
     <p><b>Lightning Turk</b> - For his support of the project and agreeing to announce this on the NRPU server</p>
     <p><b>InYourHeart</b>, <b>DRG</b>, <b>Hampy</b>, <b>Forest_Dog</b>, <b>Oxalaia</b>, <b>XxEllxX</b>, <b>Chickenus</b>, <b>Razo</b>, <b>That1Guy</b> - For creating the maps that are freely provided on the NRPU server</p>
-<h2>Extra information</h2>
+    <h2>Extra information</h2>
     <p>Please bear in mind that this project is likely to take a very long time to complete. I will or always have time (or motivation) to work on it.</p>
 </div>
+
+<script>
+    function showHide(div) {
+        if (div.style.display === "none") {
+            div.style.display = "block";
+        } else {
+            div.style.display = "none";
+        }
+    }
+</script>
 
 </body>
 </html>
