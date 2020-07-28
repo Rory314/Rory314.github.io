@@ -58,7 +58,7 @@
 
     <div style="font-size:22px; margin-bottom: 20px">The <b>R</b>oleplaying <b>O</b>verhaul <b>P</b>roject (<b>ROP</b>) aims to greatly enhance the community's roleplaying experience by creating a brand new game from scratch.</div>
 
-    <a href="#" onclick="expandAll()">Expand all</a> | <a href="#" onclick="closeAll()">Close all</a>
+    <a style="color:black; text-decoration: none;" href="#" onclick="expandAll()">Expand all</a> | <a style="color:black; text-decoration: none;" href="#" onclick="closeAll()">Close all</a>
     <button type="button" class="collapsible"><h2>Tell me more...</h2></button>
     <div class="content">
         <p>A brand new game, inspired by the strategy games we know and love, will be created from scratch. Doing this will allow for</p>
@@ -105,8 +105,9 @@
 
     function expandAll() {
         var c = document.getElementsByClassName("content");
-        for (var i = 0; i < c.length; i++) {
+        for (var i = 0; i < coll.length; i++) {
             c[i].style.display = "block";
+            c[i].previousElementSibling.classList.add("active");
         }
     }
 
@@ -114,6 +115,7 @@
         var c = document.getElementsByClassName("content");
         for (var i = 0; i < c.length; i++) {
             c[i].style.display = "none";
+            c[i].previousElementSibling.classList.remove("active");
         }
     }
 
