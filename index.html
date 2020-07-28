@@ -36,6 +36,16 @@
             margin-bottom: 10px;
         }
 
+        a:visited {
+            color: blue;
+        }
+
+        iframe {
+            display: none;
+            width:100%;
+            height:1000px;
+        }
+
 
     </style>
 </head>
@@ -64,7 +74,8 @@
     <div class="content">
         <p>Whether you've designed your own rounds, have been around for years, or are just a newbie, we would love to hear from you about what you want to see.</p>
         <p>A short (anonymous) survey has been created for you to give your views on the current state of roleplaying in S1914 & CoW, how you feel about roleplaying in general, and what you want to see from a project like this.</p>
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdgzWUORqh-KPjFvFoE2T59iIUfSkvlzwQtonkYxk8S5Oq3Wg/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">If the survery does not load for you, please use this link  instead <a href="https://forms.gle/3r7jM72Ds8iQ47ca9"></a></iframe>
+        <a href="#" id="showHide" onclick="showHide()">Show survey</a> or <a target="_blank" rel="noopener noreferrer" href="https://forms.gle/3r7jM72Ds8iQ47ca9">Open in new tab</a>
+        <iframe id="survey" src="https://docs.google.com/forms/d/e/1FAIpQLSdgzWUORqh-KPjFvFoE2T59iIUfSkvlzwQtonkYxk8S5Oq3Wg/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">If the survery does not load for you, please use this link  instead <a href="https://forms.gle/3r7jM72Ds8iQ47ca9"></a></iframe>
     </div>
     <button type="button" class="collapsible"><h2>How can I learn more about this?</h2></button>
     <div class="content">
@@ -90,20 +101,38 @@
 
 <script>
 
-   var coll = document.getElementsByClassName("collapsible");
-var i;
+    function showHide() {
+        var a = document.getElementById("showHide");
 
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
+        if (a.innerHTML === "Show survey") {
+            a.innerHTML = "Hide survey";
+        } else {
+            a.innerHTML = "Show survey";
+        }
+
+        var s = document.getElementById("survey");
+        if (s.style.display === "block") {
+            s.style.display = "none";
+        } else {
+            s.style.display = "block";
+        }
+        
     }
-  });
-}
+
+   var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    }
 </script>
 
 </body>
