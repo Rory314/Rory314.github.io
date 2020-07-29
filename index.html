@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Roleplaying Overhaul Project</title>
     <style>
+
         body {
             font-family: Arial;
-        }
-        div.main {
-            padding-left: 20px;
-            padding-right: 20px;
+            width: calc(100vw - 34px);
         }
 
         .collapsible {
@@ -46,7 +45,6 @@
             height:1000px;
         }
 
-
     </style>
 </head>
 <body>
@@ -58,7 +56,7 @@
 
     <div style="font-size:22px; margin-bottom: 20px">The <b>R</b>oleplaying <b>O</b>verhaul <b>P</b>roject (<b>ROP</b>) aims to greatly enhance the community's roleplaying experience by creating a brand-new game from scratch.</div>
 
-    <div style="font-size: 20px;"><a style="color:black; text-decoration: none;" href="#" onclick="expandAll()">Expand all</a> | <a style="color:black; text-decoration: none;" href="#" onclick="closeAll()">Close all</a></div>
+    <div style="font-size: 20px;"><a style="color:black; text-decoration: none;" href="#" id="expand">Expand all</a> | <a style="color:black; text-decoration: none;" href="#" id="close">Close all</a></div>
     <button type="button" class="collapsible"><h2>Tell me more...</h2></button>
     <div class="content">
         <p>A brand-new game, inspired by the strategy games we know and love, will be created from scratch. Doing this will allow for</p>
@@ -109,6 +107,7 @@
             c[i].style.display = "block";
             c[i].previousElementSibling.classList.add("active");
         }
+        return this;
     }
 
     function closeAll() {
@@ -118,6 +117,36 @@
             c[i].previousElementSibling.classList.remove("active");
         }
     }
+
+    $('#expand').on("click", function(e){
+        expandAll();
+
+        var div = $('<div style="width:50px;height:50px;overflow:hidden;position:absolute;top:-200px;left:-200px;"><div style="height:100px;"></div>');
+        // Append our div, do our calculation and then remove it
+        $('body').append(div);
+        var w1 = $('div', div).innerWidth();
+        div.css('overflow-y', 'scroll');
+        var w2 = $('div', div).innerWidth();
+        $(div).remove();
+        var result = w1 - w2;
+
+        document.body.style.width = "width: calc(100vw - " + result + "px);";
+    });
+
+    $('#close').on("click", function(e){
+        closeAll();
+
+        var div = $('<div style="width:50px;height:50px;overflow:hidden;position:absolute;top:-200px;left:-200px;"><div style="height:100px;"></div>');
+        // Append our div, do our calculation and then remove it
+        $('body').append(div);
+        var w1 = $('div', div).innerWidth();
+        div.css('overflow-y', 'scroll');
+        var w2 = $('div', div).innerWidth();
+        $(div).remove();
+        var result = w1 - w2;
+
+        document.body.style.width = "width: calc(100vw - " + result + "px);";
+    });
 
     function showHide() {
         var a = document.getElementById("showHide");
